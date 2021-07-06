@@ -20,7 +20,8 @@ export class Favourite extends Component {
     }
     componentDidMount = async () => {
         // const url=process.env.SERVER_URL;
-        const url = `http://localhost:3010`;
+        // const url = process.env.MONGO_URL;
+        const url =`https://examcocktailsbackend.herokuapp.com`;
         console.log(url)
         const favData = await axios.get(`${url}/getFav`);
         this.setState({
@@ -29,7 +30,8 @@ export class Favourite extends Component {
         console.log(favData.data)
     }
     delete=async(id)=> {
-        const url = `http://localhost:3010`;
+        // const url =  process.env.MONGO_URL;
+        const url =`https://examcocktailsbackend.herokuapp.com`;
         console.log(url);
         console.log('in delete function');
          const newData=await axios.delete(`${url}/deleteFav?id=${id}`);
@@ -63,7 +65,8 @@ export class Favourite extends Component {
             img:e.target.img.value,
             id:this.state.favData[this.state.index]['_id'],
         }
-        const url = `http://localhost:3010`;
+        // const url = `${process.env.MONGO_URL}`;
+        const url =`https://examcocktailsbackend.herokuapp.com`;
         console.log(obj)
         const newData=await axios.put(`${url}/updateDate`,obj);
         console.log(newData.data)

@@ -12,7 +12,8 @@ export class Home extends Component {
     }
     componentDidMount=async()=> {
         // const url=process.env.SERVER_URL;
-          const url=`http://localhost:3010`;
+        //   const url= process.env.MONGO_URL;
+        const url =`https://examcocktailsbackend.herokuapp.com`;
         console.log(url)
         const newData=await axios.get(`${url}/all`); 
         console.log(newData.data)
@@ -22,7 +23,8 @@ export class Home extends Component {
     }
     addFav= async(idx)=> {
         console.log('in Fav method')
-        const url=`http://localhost:3010`;
+        // const url= process.env.MONGO_URL
+        const url =`https://examcocktailsbackend.herokuapp.com`;
         console.log(url)
         const obj={
             name:this.state.allData[idx].strDrink,
