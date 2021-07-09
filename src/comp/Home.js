@@ -25,6 +25,7 @@ export class Home extends Component {
         console.log('in Fav method')
         // const url= process.env.MONGO_URL
         const url =`https://examcocktailsbackend.herokuapp.com`;
+        
         console.log(url)
         const obj={
             name:this.state.allData[idx].strDrink,
